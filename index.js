@@ -1,14 +1,13 @@
-import { Cliente } from "./Cliente.js";   
-import { ContaCorrente } from "./ContaCorrente.js";
-// const cliente1 = new Cliente('Wesley de Lima Marques', 08148166307, 1745, 0.0)
-// cliente1.MostraConta();
+import { Cliente } from "./Cliente.js";
+import { ContaCorrente } from "./Conta/ContaCorrente.js";
+import { ContaSalario } from "./Conta/ContaSalario.js";
+import { ContaPoupanca } from "./Conta/ContaPoupanca.js";
 
-//Conta Ana
-const clientAna = new Cliente('Ana', 99788553356);
-const contaAna = new ContaCorrente(clientAna,1002,0)
-const clientRicardo = new Cliente('Ricardo',88899955532);
-const contaRicardo = new ContaCorrente(clientRicardo,1001,100);
+const clientRicardo = new Cliente('Ricardo', 88899955532);
+const contaCorrenteRicardo = new ContaCorrente(clientRicardo, 1001);
+const contaPoupancaRicardo = new ContaPoupanca(0, clientRicardo, 1001);
+const contaSalarioRicardo = new ContaSalario(clientRicardo);
 
-console.log(contaRicardo)
-console.log(contaAna)
-console.log('Quantidade de Contas ' + ContaCorrente.quantidadeContas)
+console.log(contaPoupancaRicardo);
+console.log(contaCorrenteRicardo);
+console.log(contaSalarioRicardo)
